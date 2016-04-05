@@ -166,7 +166,7 @@ class NestedModelAdmin(ModelAdmin):
             if self.all_valid_with_nesting(formsets) and form_validated:
                 self.save_model(request, new_object, form, False)
                 self.save_related(request, form, formsets, False)
-                change_message = self.construct_change_message(request, form, formsets, True)
+                change_message = self.construct_change_message(request, form, formsets)
                 self.log_addition(request, new_object, change_message)
                 return self.response_add(request, new_object)
         else:
